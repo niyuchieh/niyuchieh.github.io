@@ -283,10 +283,10 @@ footer a:not(.nav-link) {
   }
 
 model-viewer {
-width: 600px;
-  height: 600px;
-   float: left;
-	
+width: 100%;
+height: 590px;
+float: left;
+top: 0px;  position: sticky; 
 transform: translateX(0%);
 }
 
