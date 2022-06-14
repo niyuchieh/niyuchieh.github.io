@@ -54,10 +54,12 @@ a{ text-decoration:none} a:hover{ text-decoration:underline}
   line-height: 2.5rem;
 }
 
+.nav-item{  font-size: 1.1rem;}
+
 .nav-link:hover,
 .nav-link:focus,
 .active .nav-link {
-  color: rgba(0, 0, 0, 0.6) !important;
+  color: rgba(219,143,0,1.00) !important;
 }
 
 /* Hero (intro) section */
