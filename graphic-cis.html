@@ -2,7 +2,9 @@
 <!-- upto 2 directory depth-->
 <html lang="en-US">
 <head>
-	    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+	
+	<!-- Import the component -->
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 	
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,20 +45,26 @@
 			 
 	<!-- 3d-->
 <model-viewer src="xr2.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls poster="poster.webp" shadow-intensity="1" auto-rotate camera-orbit="209deg 71.05deg 1203m" field-of-view="15.67deg" exposure="0.59" environment-image="aircraft_workshop_01_1k.hdr" skybox-image="aircraft_workshop_01_1k.hdr">
+    <button class="Hotspot" slot="hotspot-4" data-position="39.22485531663004m 193.23603591028527m 7.992351180822254m" data-normal="0.6550578289865215m 0m 0.7555787455212495m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Merry Christmas &amp; HAPPY NEW YEAR</div>
+    </button><button class="Hotspot" slot="hotspot-5" data-position="-18.5870305710661m 160.59951183500232m -23.49865135008374m" data-normal="0.3182341036553724m 0.9261838939959915m 0.20226331791277335m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">跟我拍張照吧！&gt;.
+            o</div>
+    </button>
     <div class="progress-bar hide" slot="progress-bar">
         <div class="update-bar"></div>
     </div>
     <button slot="ar-button" id="ar-button">
-        <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;">
-                在您的空間中查看
-            </font>
-        </font>
+        View in your space
     </button>
     <div id="ar-prompt">
         <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
     </div>
 </model-viewer>
+
+				
+				
+				
 
 	
 
@@ -66,7 +74,7 @@
           </div>
         </div>
       </div>
-      <div class="wave-bg"></div>
+   
     </header>
   
 
@@ -94,33 +102,8 @@
         orbitCycle[(currentOrbitIndex + 1) % orbitCycle.length];
   }, 3000);
 })();
-</script>
-	
-	
-	<script type="module">
-const modelViewer = document.querySelector("model-viewer#pickMaterial");
 
-modelViewer.addEventListener("load", () => {
 
-  const changeColor = async (event) => {
-    let material = modelViewer.materialFromPoint(event.clientX, event.clientY);
-
-    if(material != null) {
-      material.pbrMetallicRoughness.
-        setBaseColorFactor([Math.random(), Math.random(), Math.random()]);
-    }
-  }
-
-  modelViewer.addEventListener("click", changeColor);
-
-});
-
-</script>
-	
-	
-	
-	
-	
 	
 	
 
