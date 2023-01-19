@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!-- upto 2 directory depth-->
+<html lang="en-US">
+<head>
+	    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+	
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yu-Chieh｜2022</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;800&amp;display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;800&amp;display=swap" media="print" onload="this.media='all'"/>
+<noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;800&amp;display=swap"/>
+</noscript>
+<link href="./css/font-awesome/css/all.min.css?ver=1.2.0" rel="stylesheet">
+<link href="./css/bootstrap-icons/bootstrap-icons.css?ver=1.2.0" rel="stylesheet">
+<link href="./css/bootstrap.min.css?ver=1.2.0" rel="stylesheet">
+<link href="./css/aos.css?ver=1.2.0" rel="stylesheet">
+<link href="./css/main.css?ver=1.2.0" rel="stylesheet">
+<noscript>
+<style type="text/css">
+[data-aos] {
+    opacity: 1 !important;
+    transform: translate(0) scale(1) !important;
+}
+</style>
+</noscript>
+</head>
+<body id="top">
+	
+	
+	
+
+<div class="page-content">
+  <div id="content">
+    <header>
+      <div class="cover bg-light">
+        <div class="container px-3">
+          <div class="row">
+            <div class="col-lg-12 col-12" data-aos="fade-up" data-aos-delay="0"> 
+			 
+	<!-- 3d-->
+<model-viewer src="xr2.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls poster="poster.webp" shadow-intensity="1" auto-rotate camera-orbit="209deg 71.05deg 1203m" field-of-view="15.67deg" exposure="0.59" environment-image="aircraft_workshop_01_1k.hdr" skybox-image="aircraft_workshop_01_1k.hdr">
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+    <button slot="ar-button" id="ar-button">
+        <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">
+                在您的空間中查看
+            </font>
+        </font>
+    </button>
+    <div id="ar-prompt">
+        <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+    </div>
+</model-viewer>
+
+	
+
+
+			  </div>
+ 
+          </div>
+        </div>
+      </div>
+      <div class="wave-bg"></div>
+    </header>
+  
+
+	  
+
+  </div>
+</div>
+<div id="scrolltop"><a class="btn btn-secondary" href="#top"><span class="icon"><i class="fas fa-angle-up fa-x"></i></span></a></div>
+<script src="./scripts/bootstrap.bundle.min.js?ver=1.2.0"></script>
+<script src="./scripts/aos.min.js?ver=1.2.0"></script>
+<script src="./scripts/main.js?ver=1.2.0"></script>
+	
+	<script>
+(() => {
+  const modelViewer = document.querySelector('#orbit-demo');
+  const orbitCycle = [
+   '-50deg 90deg 3m',
+    '-50deg 100deg 2m',
+    modelViewer.cameraOrbit
+  ];
+
+  setInterval(() => {
+    const currentOrbitIndex = orbitCycle.indexOf(modelViewer.cameraOrbit);
+    modelViewer.cameraOrbit =
+        orbitCycle[(currentOrbitIndex + 1) % orbitCycle.length];
+  }, 3000);
+})();
+</script>
+	
+	
+	<script type="module">
+const modelViewer = document.querySelector("model-viewer#pickMaterial");
+
+modelViewer.addEventListener("load", () => {
+
+  const changeColor = async (event) => {
+    let material = modelViewer.materialFromPoint(event.clientX, event.clientY);
+
+    if(material != null) {
+      material.pbrMetallicRoughness.
+        setBaseColorFactor([Math.random(), Math.random(), Math.random()]);
+    }
+  }
+
+  modelViewer.addEventListener("click", changeColor);
+
+});
+
+</script>
+	
+	
+	
+	
+	
+	
+	
+
+</body>
+</html>
