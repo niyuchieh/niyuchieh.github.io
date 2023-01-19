@@ -44,12 +44,11 @@
             <div class="col-lg-12 col-12" data-aos="fade-up" data-aos-delay="0"> 
 			 
 	<!-- 3d-->
-<model-viewer src="xr2.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls poster="poster.webp" shadow-intensity="1" auto-rotate camera-orbit="209deg 71.05deg 1203m" field-of-view="15.67deg" exposure="0.59" environment-image="aircraft_workshop_01_1k.hdr" skybox-image="aircraft_workshop_01_1k.hdr">
-    <button class="Hotspot" slot="hotspot-4" data-position="39.22485531663004m 193.23603591028527m 7.992351180822254m" data-normal="0.6550578289865215m 0m 0.7555787455212495m" data-visibility-attribute="visible">
-        <div class="HotspotAnnotation">Merry Christmas &amp; HAPPY NEW YEAR</div>
-    </button><button class="Hotspot" slot="hotspot-5" data-position="-18.5870305710661m 160.59951183500232m -23.49865135008374m" data-normal="0.3182341036553724m 0.9261838939959915m 0.20226331791277335m" data-visibility-attribute="visible">
-        <div class="HotspotAnnotation">跟我拍張照吧！&gt;.
-            o</div>
+<model-viewer src="christmas_sphere_environment.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls poster="poster.webp" shadow-intensity="1.9" exposure="0.9" auto-rotate environment-image="spruit_sunrise_1k_HDR.hdr" skybox-image="spruit_sunrise_1k_HDR.hdr" shadow-softness="0.47" min-camera-orbit="-180deg auto auto" max-camera-orbit="180deg auto auto">
+    <button class="Hotspot" slot="hotspot-1" data-position="0.5730986763705239m 0.004540305562714195m 0.8131842375795725m" data-normal="0.30656892592861795m 0.12562881257639524m 0.9435215392907671m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">祝大家聖誕快樂</div>
+    </button><button class="Hotspot" slot="hotspot-2" data-position="-0.7886295973274748m 0.1121192059121225m -0.5084224375404723m" data-normal="-0.8026090760892673m 0.12562719896869914m -0.5831264681511308m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Christmas!!yay~~</div>
     </button>
     <div class="progress-bar hide" slot="progress-bar">
         <div class="update-bar"></div>
@@ -61,6 +60,7 @@
         <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
     </div>
 </model-viewer>
+
 
 				
 				
@@ -102,9 +102,30 @@
         orbitCycle[(currentOrbitIndex + 1) % orbitCycle.length];
   }, 3000);
 })();
-
-
+</script>
 	
+	
+	<script type="module">
+const modelViewer = document.querySelector("model-viewer#pickMaterial");
+
+modelViewer.addEventListener("load", () => {
+
+  const changeColor = async (event) => {
+    let material = modelViewer.materialFromPoint(event.clientX, event.clientY);
+
+    if(material != null) {
+      material.pbrMetallicRoughness.
+        setBaseColorFactor([Math.random(), Math.random(), Math.random()]);
+    }
+  }
+
+  modelViewer.addEventListener("click", changeColor);
+
+});
+
+</script>
+	
+
 	
 
 </body>
