@@ -30,7 +30,7 @@
 </style>
 </noscript>
 </head>
-<body id="top">
+<body>
 	
 	
 	
@@ -38,10 +38,7 @@
 <div class="page-content">
   <div id="content">
     <header>
-      <div class="cover bg-light">
-        <div class="container px-3">
-          <div class="row">
-            <div class="col-lg-12 col-12" data-aos="fade-up" data-aos-delay="0"> 
+
 			 
 	<!-- 3d-->
 <model-viewer src="christmas_sphere_environment.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls poster="poster.webp" shadow-intensity="1.9" exposure="0.9" auto-rotate environment-image="spruit_sunrise_1k_HDR.hdr" skybox-image="spruit_sunrise_1k_HDR.hdr" shadow-softness="0.47" min-camera-orbit="-180deg auto auto" max-camera-orbit="180deg auto auto">
@@ -62,23 +59,8 @@
 </model-viewer>
 
 
-				
-				
-				
-
-	
-
-
-			  </div>
- 
-          </div>
-        </div>
-      </div>
-   
     </header>
   
-
-	  
 
   </div>
 </div>
@@ -86,46 +68,6 @@
 <script src="./scripts/bootstrap.bundle.min.js?ver=1.2.0"></script>
 <script src="./scripts/aos.min.js?ver=1.2.0"></script>
 <script src="./scripts/main.js?ver=1.2.0"></script>
-	
-	<script>
-(() => {
-  const modelViewer = document.querySelector('#orbit-demo');
-  const orbitCycle = [
-   '-50deg 90deg 3m',
-    '-50deg 100deg 2m',
-    modelViewer.cameraOrbit
-  ];
-
-  setInterval(() => {
-    const currentOrbitIndex = orbitCycle.indexOf(modelViewer.cameraOrbit);
-    modelViewer.cameraOrbit =
-        orbitCycle[(currentOrbitIndex + 1) % orbitCycle.length];
-  }, 3000);
-})();
-</script>
-	
-	
-	<script type="module">
-const modelViewer = document.querySelector("model-viewer#pickMaterial");
-
-modelViewer.addEventListener("load", () => {
-
-  const changeColor = async (event) => {
-    let material = modelViewer.materialFromPoint(event.clientX, event.clientY);
-
-    if(material != null) {
-      material.pbrMetallicRoughness.
-        setBaseColorFactor([Math.random(), Math.random(), Math.random()]);
-    }
-  }
-
-  modelViewer.addEventListener("click", changeColor);
-
-});
-
-</script>
-	
-
 	
 
 </body>
